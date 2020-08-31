@@ -8,26 +8,22 @@
 
 import Foundation
 
+// run n2 space (1)
+func smallestDifference(arrayOne: inout [Int], arrayTwo: inout [Int]) -> [Int] {
+    var currentLowestValues = [Int]()
+    var currentLowestValue = Int.max
 
-func isValidSubsequence(_ array: [Int], _ sequence: [Int]) -> Bool {
-    var arrayPointer = 0
-    var sequancePointer = 0
-    var foundSequanceValues = 0
-    
-    while arrayPointer != (array.count) {
-        if array[arrayPointer] == sequence[sequancePointer] {
-            arrayPointer += 1
-            sequancePointer += 1
-            foundSequanceValues += 1
-        } else {
-            arrayPointer += 1
-        }
-        
-        if foundSequanceValues == sequence.count {
-            return true
+    for (_, i) in arrayOne.enumerated() {
+        for (_, j) in arrayTwo.enumerated() {
+            if abs(i-j) < currentLowestValue {
+                currentLowestValues = [i,j]
+                currentLowestValue = abs(i-j)
+            }
         }
     }
-    return false
+    return currentLowestValues
 }
 
-print(isValidSubsequence([5,1,22,25,6,-1,8,10], [111]))
+var arrayOne = [1,2,3345,2,78]
+var arrayTwo = [1,1,1,1]
+print(smallestDifference(arrayOne: &arrayOne, arrayTwo: &arrayTwo))
