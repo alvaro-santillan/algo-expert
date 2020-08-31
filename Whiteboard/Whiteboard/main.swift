@@ -10,18 +10,22 @@ import Foundation
 
 
 func twoNumberSum(array: [Int], targetSum: Int) -> [Int] {
-    var hashTable = [Int:Bool]()
+    let newArray = array.sorted()
+    var leftPointer = 0
+    var rightPointer = array.count-1
     
-    for i in 0...(array.count-1) {
-        let neededValue = targetSum - array[i]
-        if hashTable[neededValue] == true {
-            print(neededValue, array[i])
-            return [neededValue, array[i]]
+    while leftPointer != rightPointer {
+        if (newArray[leftPointer] + newArray[rightPointer]) == targetSum {
+            return [newArray[leftPointer], newArray[rightPointer]]
+        }
+        
+        if (newArray[leftPointer] + newArray[rightPointer]) > targetSum {
+            rightPointer -= 1
         } else {
-            hashTable[array[i]] = true
+            leftPointer += 1
         }
     }
     return []
 }
 
-twoNumberSum(array: [-1,6], targetSum: 5)
+print(twoNumberSum(array: [8,11], targetSum: 19))
