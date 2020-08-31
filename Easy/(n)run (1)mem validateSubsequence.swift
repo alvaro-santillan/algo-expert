@@ -10,18 +10,14 @@ class Program {
     static func isValidSubsequence(_ array: [Int], _ sequence: [Int]) -> Bool {
         var arrayPointer = 0
         var sequancePointer = 0
-        var foundSequanceValues = 0
 
         while arrayPointer != (array.count) {
             if array[arrayPointer] == sequence[sequancePointer] {
-                arrayPointer += 1
                 sequancePointer += 1
-                foundSequanceValues += 1
-            } else {
-                arrayPointer += 1
             }
-
-            if foundSequanceValues == sequence.count {
+            arrayPointer += 1
+        
+            if sequancePointer == sequence.count {
                 return true
             }
         }
