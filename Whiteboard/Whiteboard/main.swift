@@ -9,23 +9,25 @@
 import Foundation
 
 
-func twoNumberSum(array: [Int], targetSum: Int) -> [Int] {
-    let newArray = array.sorted()
-    var leftPointer = 0
-    var rightPointer = array.count-1
+func isValidSubsequence(_ array: [Int], _ sequence: [Int]) -> Bool {
+    var arrayPointer = 0
+    var sequancePointer = 0
+    var foundSequanceValues = 0
     
-    while leftPointer != rightPointer {
-        if (newArray[leftPointer] + newArray[rightPointer]) == targetSum {
-            return [newArray[leftPointer], newArray[rightPointer]]
+    while arrayPointer != (array.count) {
+        if array[arrayPointer] == sequence[sequancePointer] {
+            arrayPointer += 1
+            sequancePointer += 1
+            foundSequanceValues += 1
+        } else {
+            arrayPointer += 1
         }
         
-        if (newArray[leftPointer] + newArray[rightPointer]) > targetSum {
-            rightPointer -= 1
-        } else {
-            leftPointer += 1
+        if foundSequanceValues == sequence.count {
+            return true
         }
     }
-    return []
+    return false
 }
 
-print(twoNumberSum(array: [8,11], targetSum: 19))
+print(isValidSubsequence([5,1,22,25,6,-1,8,10], [111]))
