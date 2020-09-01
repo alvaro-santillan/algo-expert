@@ -1,9 +1,7 @@
 //
-//  main.swift
-//  Whiteboard
-//
-//  Created by Álvaro Santillan on 8/30/20.
+//  Created by Álvaro Santillan on 8/31/20.
 //  Copyright © 2020 Álvaro Santillan. All rights reserved.
+//  https://www.algoexpert.io/questions/Move%20Element%20To%20End
 //
 
 import Foundation
@@ -30,6 +28,3 @@ class Program {
         return array
     }
 }
-
-var array = [1, 2, 4, 5, 3]
-print(moveElementToEnd(&array, 3))
