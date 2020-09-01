@@ -8,22 +8,35 @@
 
 import Foundation
 
-// run n2 space (1)
+// run nLogN + mLogM, space (1)
 func smallestDifference(arrayOne: inout [Int], arrayTwo: inout [Int]) -> [Int] {
-    var currentLowestValues = [Int]()
-    var currentLowestValue = Int.max
-
-    for (_, i) in arrayOne.enumerated() {
-        for (_, j) in arrayTwo.enumerated() {
-            if abs(i-j) < currentLowestValue {
-                currentLowestValues = [i,j]
-                currentLowestValue = abs(i-j)
+    arrayOne.sort()
+    arrayTwo.sort()
+    var arrayOnePointer = 0
+    var arrayTwoPointer = 0
+    var currentMin = Int.max
+    var currentMinValues = [Int]()
+    
+    while arrayOnePointer != arrayOne.count && arrayTwoPointer != arrayTwo.count {
+        if arrayOne[arrayOnePointer] == arrayTwo[arrayTwoPointer] {
+            return [arrayOne[arrayOnePointer], arrayTwo[arrayTwoPointer]]
+        } else if arrayOne[arrayOnePointer] < arrayTwo[arrayTwoPointer] {
+            if abs((arrayOne[arrayOnePointer] - arrayTwo[arrayTwoPointer])) < currentMin {
+                currentMinValues = [arrayOne[arrayOnePointer], arrayTwo[arrayTwoPointer]]
+                currentMin = abs(arrayOne[arrayOnePointer] - arrayTwo[arrayTwoPointer])
             }
+            arrayOnePointer += 1
+        } else {
+            if abs((arrayOne[arrayOnePointer] - arrayTwo[arrayTwoPointer])) < currentMin {
+                currentMinValues = [arrayOne[arrayOnePointer], arrayTwo[arrayTwoPointer]]
+                currentMin = abs(arrayOne[arrayOnePointer] - arrayTwo[arrayTwoPointer])
+            }
+            arrayTwoPointer += 1
         }
     }
-    return currentLowestValues
+    return currentMinValues
 }
 
-var arrayOne = [1,2,3345,2,78]
-var arrayTwo = [1,1,1,1]
+var arrayOne = [-1,5,10,20,28,3]
+var arrayTwo = [26,134,135,15,17]
 print(smallestDifference(arrayOne: &arrayOne, arrayTwo: &arrayTwo))
