@@ -1,14 +1,12 @@
 //
-//  main.swift
-//  Whiteboard
-//
-//  Created by Álvaro Santillan on 8/30/20.
+//  Created by Álvaro Santillan on 9/2/20.
 //  Copyright © 2020 Álvaro Santillan. All rights reserved.
+//  https://www.algoexpert.io/questions/Spiral%20Traverse
 //
 
 import Foundation
 
-// run n, n^2, (1)
+class Program {
     func spiralTraverse(array: [[Int]]) -> [Int] {
         var horizontalStart = 0
         var horizontalEnd = array[0].count-1
@@ -49,12 +47,4 @@ import Foundation
         }
         return result
     }
-//}
-
-var array = [[1, 2, 3, 4, 5], [14, 15, 16, 17, 6], [13, 20, 19, 18, 7], [12, 11, 10, 9, 8]]
-array = [[1,2,3,4], [12,13,14,5], [11,16,15,6], [10,9,8,7]]
-array = [[1,2], [8,3], [7,4], [6,5]]
-array = [[1], [2], [3], [4]]
-array = [[1,2,3,4,5,6,7,8], [18,19,20,21,22,23,24,9], [17,16,15,14,13,12,11,10]]
-array = [[1]]
-print(spiralTraverse(array: array))
+}
