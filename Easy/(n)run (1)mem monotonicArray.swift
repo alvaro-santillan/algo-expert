@@ -1,14 +1,11 @@
 //
-//  main.swift
-//  Whiteboard
-//
-//  Created by Álvaro Santillan on 8/30/20.
+//  Created by Álvaro Santillan on 9/2/20.
 //  Copyright © 2020 Álvaro Santillan. All rights reserved.
+//  https://www.algoexpert.io/questions/Monotonic%20Array
 //
 
 import Foundation
 
-// n runtime (1) space
 class Program {
   func isMonotonic(array: [Int]) -> Bool {
     var isDecreasing = false
@@ -29,9 +26,3 @@ class Program {
     return true
   }
 }
-
-let demo = Program()
-var array = [-1,-5,-10,1100,-1100,-1102,-9001]
-//array = [1,2,3,4,5,6,7,7]
-//array = [1,2,3,2,1]
-print(demo.isMonotonic(array: array))
