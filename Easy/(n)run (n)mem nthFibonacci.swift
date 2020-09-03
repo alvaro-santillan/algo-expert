@@ -1,14 +1,11 @@
 //
-//  main.swift
-//  Whiteboard
-//
-//  Created by Álvaro Santillan on 8/30/20.
+//  Created by Álvaro Santillan on 9/2/20.
 //  Copyright © 2020 Álvaro Santillan. All rights reserved.
+//  https://www.algoexpert.io/questions/Nth%20Fibonacci
 //
 
 import Foundation
 
-// run(n) space(n)
 class Program {
     func getNthFib(n: Int) -> Int {
         var counter = 1
@@ -34,6 +31,3 @@ class Program {
         return value
     }
 }
-
-let demo = Program()
-print(demo.getNthFib(n: 6))
