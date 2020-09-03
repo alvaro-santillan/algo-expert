@@ -1,13 +1,10 @@
 //
-//  main.swift
-//  Whiteboard
-//
-//  Created by Álvaro Santillan on 8/30/20.
+//  Created by Álvaro Santillan on 9/2/20.
 //  Copyright © 2020 Álvaro Santillan. All rights reserved.
+//  https://www.algoexpert.io/questions/Monotonic%20Array
 //
 
 import Foundation
-
 
 class Program {
   func isPalindrome(string: String) -> Bool {
@@ -23,10 +20,3 @@ class Program {
     return true
   }
 }
-
-let demo = Program()
-var array = [1,2,3,3,4, 0,10, 6,5,-1,-3, 2,3]
-//array = [1,2,3,4,5,6,7,7]
-//array = [1,2,3,2,1]
-print(demo.isPalindrome(string: "ab"))
-//print(demo.longestPeak(array: array))
