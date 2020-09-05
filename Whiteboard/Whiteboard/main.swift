@@ -8,32 +8,33 @@
 
 import Foundation
 
-// run(n) space(n)
 class Program {
-    func getNthFib(n: Int) -> Int {
-        var counter = 1
-        var value = 0
-        
-        if n == 1 {
-            return 0
-        }
-        if n == 2 {
-            return 1
-        }
-        
-        func fib(first: Int, secoind: Int) {
-            counter += 1
-            
-            if counter != n {
-                value = first+secoind
-                fib(first: secoind, secoind: first+secoind)
-            }
-        }
-        
-        fib(first: 0, secoind: 1)
-        return value
+  class BST {
+    var value: Int
+    var left: BST?
+    var right: BST?
+
+    init(value: Int) {
+      self.value = value
     }
+  }
+
+  func branchSums(root: BST) -> [Int] {
+    let start = root
+    
+    return []
+  }
 }
 
 let demo = Program()
-print(demo.getNthFib(n: 6))
+var tree: Program.BST = Program.BST(value: 1)
+tree.left = Program.BST(value: 2)
+tree.right = Program.BST(value: 3)
+tree.left!.left = Program.BST(value: 4)
+tree.left!.right = Program.BST(value: 5)
+tree.right!.left = Program.BST(value: 6)
+tree.right!.right = Program.BST(value: 7)
+tree.left!.left!.left = Program.BST(value: 8)
+tree.left!.left!.right = Program.BST(value: 9)
+tree.left!.right!.left = Program.BST(value: 10)
+demo.branchSums(root: tree)
